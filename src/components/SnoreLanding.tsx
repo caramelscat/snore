@@ -68,13 +68,20 @@ const SnoreLanding: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          {/* Title Card */}
           <div className="glass-card mb-8">
-            <h1 className="text-6xl md:text-8xl font-black mb-6 text-glow">
+            <h1 className="text-6xl md:text-8xl font-black mb-2 text-glow">
               <span className="bg-gradient-to-r from-primary via-accent to-neon-purple bg-clip-text text-transparent">
                 $SNORE
               </span>
             </h1>
-            
+          </div>
+
+          {/* Space for sloth face to show through */}
+          <div className="h-24 md:h-32"></div>
+
+          {/* Description and Buttons Card */}
+          <div className="glass-card">
             <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-2xl mx-auto leading-relaxed">
               The sleepy sloth that dreams of wealth while you sleep. 
               <br />
