@@ -77,7 +77,7 @@ const SnoreLanding: React.FC = () => {
           </div>
           
           <div className="slide-in-up opacity-0" style={{ animationDelay: '1s' }}>
-            <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-2xl mx-auto leading-relaxed">
               The sleepy sloth that dreams of wealth while you sleep. 
               <br />
               <span className="text-primary font-medium">Snore your way to prosperity.</span>
@@ -136,7 +136,7 @@ const SnoreLanding: React.FC = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
               Your Role
             </h3>
-            <p className="text-lg text-foreground/90 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/95 leading-relaxed max-w-2xl mx-auto">
               Close your eyes; open your mind. Collect the story, not just the token. 
               Share art, remix the sloth, invite a friend to rest. The calmer we get, 
               the louder the signal becomes.
@@ -147,7 +147,7 @@ const SnoreLanding: React.FC = () => {
             <h2 className="text-4xl md:text-6xl font-bold mb-8 text-glow">
               Sleep. Earn. Repeat.
             </h2>
-            <p className="text-xl mb-12 text-foreground/80 leading-relaxed">
+            <p className="text-xl mb-12 text-foreground/90 leading-relaxed">
               While others stress about market movements, our community embraces the zen of passive wealth building. 
               Join the sleepy revolution where dreams become reality.
             </p>
@@ -156,17 +156,17 @@ const SnoreLanding: React.FC = () => {
               <div className="glass-card">
                 <div className="text-4xl mb-4">🦥</div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Relax & Hold</h3>
-                <p className="text-muted-foreground">No stress, no rush. Good things come to sloths who wait.</p>
+                <p className="text-foreground/85">No stress, no rush. Good things come to sloths who wait.</p>
               </div>
               <div className="glass-card">
                 <div className="text-4xl mb-4">💰</div>
                 <h3 className="text-xl font-semibold mb-2 text-accent">Dream Rewards</h3>
-                <p className="text-muted-foreground">Earn while you sleep through our innovative staking mechanisms.</p>
+                <p className="text-foreground/85">Earn while you sleep through our innovative staking mechanisms.</p>
               </div>
               <div className="glass-card">
                 <div className="text-4xl mb-4">🚀</div>
                 <h3 className="text-xl font-semibold mb-2 text-neon-purple">Slow & Steady</h3>
-                <p className="text-muted-foreground">Sustainable growth that doesn't require constant attention.</p>
+                <p className="text-foreground/85">Sustainable growth that doesn't require constant attention.</p>
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@ const SnoreLanding: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-glow">
               Join the Sleepy Community
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground/85">
               Get updates, sleep tips, and exclusive early access to $SNORE features.
             </p>
           </div>
@@ -194,7 +194,7 @@ const SnoreLanding: React.FC = () => {
           <div className="glass-card max-w-2xl mx-auto">
             <div className="text-6xl mb-4">🦥</div>
             <h3 className="text-2xl font-bold mb-4 text-primary">Sweet Dreams</h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-foreground/85 mb-6">
               Remember: The best investors are often the sleepiest ones. 
               Let $SNORE work while you rest.
             </p>
