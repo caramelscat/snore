@@ -22,6 +22,22 @@ const SnoreLanding: React.FC = () => {
       <FloatingParticles />
       <SocialFloatingIcons />
       
+      {/* Top Navigation Buttons */}
+      <div className="fixed top-8 left-8 z-50">
+        <GlassButton variant="secondary" size="sm">
+          About Our Dream
+        </GlassButton>
+      </div>
+      <div className="fixed top-8 right-8 z-50">
+        <GlassButton 
+          variant="secondary" 
+          size="sm"
+          onClick={() => setIsMissionModalOpen(true)}
+        >
+          Our Mission
+        </GlassButton>
+      </div>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
@@ -69,11 +85,12 @@ const SnoreLanding: React.FC = () => {
           </div>
 
           <div className="slide-in-up opacity-0 flex flex-wrap gap-6 justify-center" style={{ animationDelay: '1.5s' }}>
-            <GlassButton variant="hero">
+            <GlassButton variant="hero" size="lg">
               About Our Dream
             </GlassButton>
             <GlassButton 
               variant="secondary" 
+              size="lg"
               onClick={() => setIsMissionModalOpen(true)}
             >
               Our Mission
@@ -114,11 +131,23 @@ const SnoreLanding: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          {/* Your Role Section */}
+          <div className="mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
+              Your Role
+            </h3>
+            <p className="text-lg text-foreground/90 leading-relaxed max-w-2xl mx-auto">
+              Close your eyes; open your mind. Collect the story, not just the token. 
+              Share art, remix the sloth, invite a friend to rest. The calmer we get, 
+              the louder the signal becomes.
+            </p>
+          </div>
+
           <div className="glass-card">
             <h2 className="text-4xl md:text-6xl font-bold mb-8 text-glow">
               Sleep. Earn. Repeat.
             </h2>
-            <p className="text-xl mb-12 text-muted-foreground leading-relaxed">
+            <p className="text-xl mb-12 text-foreground/80 leading-relaxed">
               While others stress about market movements, our community embraces the zen of passive wealth building. 
               Join the sleepy revolution where dreams become reality.
             </p>
