@@ -68,33 +68,31 @@ const SnoreLanding: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="slide-in-up opacity-0" style={{ animationDelay: '0.5s' }}>
+          <div className="glass-card mb-8">
             <h1 className="text-6xl md:text-8xl font-black mb-6 text-glow">
               <span className="bg-gradient-to-r from-primary via-accent to-neon-purple bg-clip-text text-transparent">
                 $SNORE
               </span>
             </h1>
-          </div>
-          
-          <div className="slide-in-up opacity-0" style={{ animationDelay: '1s' }}>
+            
             <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-2xl mx-auto leading-relaxed">
               The sleepy sloth that dreams of wealth while you sleep. 
               <br />
               <span className="text-primary font-medium">Snore your way to prosperity.</span>
             </p>
-          </div>
-
-          <div className="slide-in-up opacity-0 flex flex-wrap gap-6 justify-center" style={{ animationDelay: '1.5s' }}>
-            <GlassButton variant="hero" size="lg">
-              About Our Dream
-            </GlassButton>
-            <GlassButton 
-              variant="secondary" 
-              size="lg"
-              onClick={() => setIsMissionModalOpen(true)}
-            >
-              Our Mission
-            </GlassButton>
+            
+            <div className="flex flex-wrap gap-6 justify-center">
+              <GlassButton variant="hero" size="lg">
+                About Our Dream
+              </GlassButton>
+              <GlassButton 
+                variant="secondary" 
+                size="lg"
+                onClick={() => setIsMissionModalOpen(true)}
+              >
+                Our Mission
+              </GlassButton>
+            </div>
           </div>
 
           {/* Floating ZZZ particles */}
@@ -132,7 +130,7 @@ const SnoreLanding: React.FC = () => {
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           {/* Your Role Section */}
-          <div className="mb-8">
+          <div className="glass-card mb-8">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
               Your Role
             </h3>
@@ -176,7 +174,7 @@ const SnoreLanding: React.FC = () => {
       {/* Newsletter Section */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="glass-card max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-glow">
               Join the Sleepy Community
             </h2>
