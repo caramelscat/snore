@@ -3,12 +3,14 @@ import { GlassButton } from './GlassButton';
 import FloatingParticles from './FloatingParticles';
 import SocialFloatingIcons from './SocialFloatingIcons';
 import MissionModal from './MissionModal';
+import AboutModal from './AboutModal';
 import NewsletterForm from './NewsletterForm';
 import slothSpaceImage from '@/assets/sloth-space.png';
 import slothMoneyMachineImage from '@/assets/sloth-money-machine.png';
 
 const SnoreLanding: React.FC = () => {
   const [isMissionModalOpen, setIsMissionModalOpen] = useState(false);
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -24,7 +26,11 @@ const SnoreLanding: React.FC = () => {
       
       {/* Top Navigation Buttons */}
       <div className="fixed top-8 left-8 z-50">
-        <GlassButton variant="secondary" size="sm">
+        <GlassButton 
+          variant="secondary" 
+          size="sm"
+          onClick={() => setIsAboutModalOpen(true)}
+        >
           About Our Dream
         </GlassButton>
       </div>
@@ -119,7 +125,11 @@ const SnoreLanding: React.FC = () => {
             </p>
             
             <div className="flex flex-wrap gap-6 justify-center relative z-10">
-              <GlassButton variant="hero" size="lg">
+              <GlassButton 
+                variant="hero" 
+                size="lg"
+                onClick={() => setIsAboutModalOpen(true)}
+              >
                 About Our Dream
               </GlassButton>
               <GlassButton 
@@ -407,6 +417,10 @@ const SnoreLanding: React.FC = () => {
       <MissionModal 
         isOpen={isMissionModalOpen} 
         onClose={() => setIsMissionModalOpen(false)} 
+      />
+      <AboutModal 
+        isOpen={isAboutModalOpen} 
+        onClose={() => setIsAboutModalOpen(false)} 
       />
     </div>
   );
