@@ -193,6 +193,43 @@ const SnoreLanding: React.FC = () => {
         </div>
       </section>
 
+      {/* Cosmic Manifesto Section */}
+      <section className="relative py-20">
+        <div className="container mx-auto px-4">
+          <div className="glass-card max-w-4xl mx-auto text-center">
+            <div className="text-4xl mb-6">🌙</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-glow">
+              The Cosmic Manifesto of $SNORE
+            </h2>
+            
+            <div className="space-y-6 text-lg md:text-xl text-foreground/95 leading-relaxed max-w-3xl mx-auto">
+              <p className="italic">In the beginning, there was noise.<br />
+              Charts screamed, feeds scrolled endlessly, and the world forgot how to rest.</p>
+              
+              <p>Then came the sloth.<br />
+              Slow, floating, snoring—he carried a reminder from the akashic field:</p>
+              
+              <div className="text-primary font-semibold text-xl md:text-2xl space-y-2">
+                <p>Rest is alpha.</p>
+                <p>Culture compounds.</p>
+                <p>Dreams create value.</p>
+              </div>
+              
+              <p>$SNORE is not just a coin. It is a pause button for the digital world.<br />
+              A community that grows even when you close your eyes.<br />
+              A story that proves: sometimes the best move is no move at all.</p>
+              
+              <p className="text-accent font-medium">Sleep on it.<br />
+              Wake up richer—in memes, in culture, in connection.</p>
+              
+              <p className="text-2xl font-bold text-glow">
+                Welcome to the dream loop. 🦥💤✨
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="relative py-12 border-t border-glass-border">
         <div className="container mx-auto px-4 text-center">
