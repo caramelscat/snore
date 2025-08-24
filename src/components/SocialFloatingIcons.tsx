@@ -67,11 +67,13 @@ const SocialFloatingIcons: React.FC = () => {
               <img 
                 src={Icon as string} 
                 alt={name} 
-                className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300"
+                className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
+                key={name}
               />
             ) : (
               React.createElement(Icon as LucideIcon, { 
-                className: "w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300" 
+                className: "w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300",
+                key: name
               })
             )}
           </a>
