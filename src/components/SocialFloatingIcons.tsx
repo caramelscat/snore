@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
-import { Twitter, Send, MessageCircle } from 'lucide-react';
+import { MessageCircle, LucideIcon } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
+import xLogo from '@/assets/x-logo.png';
+import telegramLogo from '@/assets/telegram-logo.png';
 
-const socialLinks = [
-  { icon: Twitter, href: 'https://x.com/SnoreOnSolana', name: 'X: @SnoreOnSolana', delay: '0s', isExternal: true },
-  { icon: Send, href: 'https://t.me/snoreverse', name: 'Telegram: t.me/snoreverse', delay: '0.5s', isExternal: true },
-  { icon: MessageCircle, href: '#', name: 'AI Support Chat', delay: '1s', isExternal: false }
+interface SocialLink {
+  icon: string | LucideIcon;
+  href: string;
+  name: string;
+  delay: string;
+  isExternal: boolean;
+  isImage: boolean;
+}
+
+const socialLinks: SocialLink[] = [
+  { icon: xLogo, href: 'https://x.com/SnoreOnSolana', name: 'X: @SnoreOnSolana', delay: '0s', isExternal: true, isImage: true },
+  { icon: telegramLogo, href: 'https://t.me/snoreverse', name: 'Telegram: t.me/snoreverse', delay: '0.5s', isExternal: true, isImage: true },
+  { icon: MessageCircle, href: '#', name: 'AI Support Chat', delay: '1s', isExternal: false, isImage: false }
 ];
 
 const SocialFloatingIcons: React.FC = () => {
@@ -18,7 +29,7 @@ const SocialFloatingIcons: React.FC = () => {
   ]);
   const [inputMessage, setInputMessage] = useState('');
 
-  const handleLinkClick = (link: typeof socialLinks[0], e: React.MouseEvent) => {
+  const handleLinkClick = (link: SocialLink, e: React.MouseEvent) => {
     if (!link.isExternal) {
       e.preventDefault();
       setIsChatOpen(true);
@@ -41,18 +52,28 @@ const SocialFloatingIcons: React.FC = () => {
   return (
     <>
       <div className="fixed right-8 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-50">
-        {socialLinks.map(({ icon: Icon, href, name, delay, isExternal }) => (
+        {socialLinks.map(({ icon: Icon, href, name, delay, isExternal, isImage }) => (
           <a
             key={name}
             href={href}
             target={isExternal ? '_blank' : undefined}
             rel={isExternal ? 'noopener noreferrer' : undefined}
-            onClick={(e) => handleLinkClick({ icon: Icon, href, name, delay, isExternal }, e)}
+            onClick={(e) => handleLinkClick({ icon: Icon, href, name, delay, isExternal, isImage }, e)}
             className="glass-button w-16 h-16 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer"
             style={{ animationDelay: delay }}
             aria-label={name}
           >
-            <Icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300" />
+            {isImage ? (
+              <img 
+                src={Icon as string} 
+                alt={name} 
+                className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300"
+              />
+            ) : (
+              React.createElement(Icon as LucideIcon, { 
+                className: "w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300" 
+              })
+            )}
           </a>
         ))}
       </div>
