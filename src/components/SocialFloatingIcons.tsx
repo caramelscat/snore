@@ -51,7 +51,7 @@ const SocialFloatingIcons: React.FC = () => {
 
   return (
     <>
-      <div className="fixed right-8 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-50">
+      <div className="fixed right-8 top-[30%] flex flex-col gap-8 z-50">
         {socialLinks.map(({ icon: Icon, href, name, delay, isExternal, isImage }) => (
           <a
             key={name}
