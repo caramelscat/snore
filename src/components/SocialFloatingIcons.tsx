@@ -51,33 +51,50 @@ const SocialFloatingIcons: React.FC = () => {
 
   return (
     <>
-      <div className="fixed right-8 top-[30%] flex flex-col gap-8 z-50">
-        {socialLinks.map(({ icon: Icon, href, name, delay, isExternal, isImage }) => (
-          <a
-            key={name}
-            href={href}
-            target={isExternal ? '_blank' : undefined}
-            rel={isExternal ? 'noopener noreferrer' : undefined}
-            onClick={(e) => handleLinkClick({ icon: Icon, href, name, delay, isExternal, isImage }, e)}
-            className="glass-button w-16 h-16 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer"
-            style={{ animationDelay: delay }}
-            aria-label={name}
-          >
-            {isImage ? (
-              <img 
-                src={Icon as string} 
-                alt={name} 
-                className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
-                key={name}
-              />
-            ) : (
-              React.createElement(Icon as LucideIcon, { 
-                className: "w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300",
-                key: name
-              })
-            )}
-          </a>
-        ))}
+      {/* Social Icons positioned inside planets */}
+      <div className="fixed inset-0 pointer-events-none z-40">
+        {/* X Logo - Top Planet */}
+        <a
+          href={socialLinks[0].href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute right-[8%] top-[20%] w-12 h-12 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
+          style={{ animationDelay: socialLinks[0].delay }}
+          aria-label={socialLinks[0].name}
+        >
+          <img 
+            src={socialLinks[0].icon as string} 
+            alt={socialLinks[0].name} 
+            className="w-6 h-6 object-contain group-hover:scale-125 transition-transform duration-300 filter drop-shadow-lg"
+          />
+        </a>
+
+        {/* Telegram Logo - Middle Planet */}
+        <a
+          href={socialLinks[1].href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute right-[8%] top-[35%] w-12 h-12 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
+          style={{ animationDelay: socialLinks[1].delay }}
+          aria-label={socialLinks[1].name}
+        >
+          <img 
+            src={socialLinks[1].icon as string} 
+            alt={socialLinks[1].name} 
+            className="w-6 h-6 object-contain group-hover:scale-125 transition-transform duration-300 filter drop-shadow-lg"
+          />
+        </a>
+
+        {/* AI Support Chat - Bottom Planet */}
+        <a
+          href="#"
+          onClick={(e) => handleLinkClick(socialLinks[2], e)}
+          className="absolute right-[8%] top-[50%] w-12 h-12 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
+          style={{ animationDelay: socialLinks[2].delay }}
+          aria-label={socialLinks[2].name}
+        >
+          <MessageCircle className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300" />
+        </a>
       </div>
 
       <Dialog open={isChatOpen} onOpenChange={setIsChatOpen}>
