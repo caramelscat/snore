@@ -65,7 +65,7 @@ const SocialFloatingIcons: React.FC = () => {
           <img 
             src={socialLinks[0].icon as string} 
             alt={socialLinks[0].name} 
-            className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
+            className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
           />
         </a>
 
@@ -81,7 +81,7 @@ const SocialFloatingIcons: React.FC = () => {
           <img 
             src={socialLinks[1].icon as string} 
             alt={socialLinks[1].name} 
-            className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
+            className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
           />
         </a>
 
@@ -93,7 +93,7 @@ const SocialFloatingIcons: React.FC = () => {
           style={{ animationDelay: socialLinks[2].delay }}
           aria-label={socialLinks[2].name}
         >
-          <MessageCircle className="w-10 h-10 text-primary group-hover:text-accent transition-colors duration-300" />
+          <MessageCircle className="w-8 h-8 text-primary group-hover:text-accent transition-colors duration-300" />
         </a>
       </div>
 
