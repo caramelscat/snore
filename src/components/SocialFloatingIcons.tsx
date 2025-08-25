@@ -58,14 +58,14 @@ const SocialFloatingIcons: React.FC = () => {
           href={socialLinks[0].href}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute right-[8%] top-[20%] w-12 h-12 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
+          className="absolute right-[8%] top-[20%] w-16 h-16 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
           style={{ animationDelay: socialLinks[0].delay }}
           aria-label={socialLinks[0].name}
         >
           <img 
             src={socialLinks[0].icon as string} 
             alt={socialLinks[0].name} 
-            className="w-6 h-6 object-contain group-hover:scale-125 transition-transform duration-300 filter drop-shadow-lg"
+            className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
           />
         </a>
 
@@ -74,14 +74,14 @@ const SocialFloatingIcons: React.FC = () => {
           href={socialLinks[1].href}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute right-[8%] top-[35%] w-12 h-12 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
+          className="absolute right-[8%] top-[35%] w-16 h-16 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
           style={{ animationDelay: socialLinks[1].delay }}
           aria-label={socialLinks[1].name}
         >
           <img 
             src={socialLinks[1].icon as string} 
             alt={socialLinks[1].name} 
-            className="w-6 h-6 object-contain group-hover:scale-125 transition-transform duration-300 filter drop-shadow-lg"
+            className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
           />
         </a>
 
@@ -89,11 +89,11 @@ const SocialFloatingIcons: React.FC = () => {
         <a
           href="#"
           onClick={(e) => handleLinkClick(socialLinks[2], e)}
-          className="absolute right-[8%] top-[50%] w-12 h-12 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
+          className="absolute right-[8%] top-[50%] w-16 h-16 rounded-full flex items-center justify-center group floating glow-pulse cursor-pointer pointer-events-auto"
           style={{ animationDelay: socialLinks[2].delay }}
           aria-label={socialLinks[2].name}
         >
-          <MessageCircle className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300" />
+          <MessageCircle className="w-10 h-10 text-primary group-hover:text-accent transition-colors duration-300" />
         </a>
       </div>
 
