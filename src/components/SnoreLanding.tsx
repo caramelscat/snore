@@ -4,6 +4,9 @@ import FloatingParticles from './FloatingParticles';
 import SocialFloatingIcons from './SocialFloatingIcons';
 import MissionModal from './MissionModal';
 import AboutModal from './AboutModal';
+import WhitepaperModal from './WhitepaperModal';
+import TokenomicsModal from './TokenomicsModal';
+import RoadmapModal from './RoadmapModal';
 import NewsletterForm from './NewsletterForm';
 import slothSpaceImage from '@/assets/sloth-space.png';
 import slothMoneyMachineImage from '@/assets/sloth-money-machine.png';
@@ -11,6 +14,9 @@ import slothMoneyMachineImage from '@/assets/sloth-money-machine.png';
 const SnoreLanding: React.FC = () => {
   const [isMissionModalOpen, setIsMissionModalOpen] = useState(false);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
+  const [isWhitepaperModalOpen, setIsWhitepaperModalOpen] = useState(false);
+  const [isTokenomicsModalOpen, setIsTokenomicsModalOpen] = useState(false);
+  const [isRoadmapModalOpen, setIsRoadmapModalOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -400,14 +406,29 @@ const SnoreLanding: React.FC = () => {
               Let $SNORE work while you rest.
             </p>
             <div className="flex justify-center gap-4 relative z-10">
-              <GlassButton variant="secondary" size="sm">
-                Whitepaper
+              <GlassButton 
+                variant="secondary" 
+                size="sm"
+                onClick={() => setIsWhitepaperModalOpen(true)}
+                className="hover:shadow-[0_0_20px_hsl(var(--neon-purple)/0.6)] transition-all duration-300"
+              >
+                📄 Whitepaper
               </GlassButton>
-              <GlassButton variant="secondary" size="sm">
-                Tokenomics
+              <GlassButton 
+                variant="secondary" 
+                size="sm"
+                onClick={() => setIsTokenomicsModalOpen(true)}
+                className="hover:shadow-[0_0_20px_hsl(var(--neon-green)/0.6)] transition-all duration-300"
+              >
+                💰 Tokenomics
               </GlassButton>
-              <GlassButton variant="secondary" size="sm">
-                Roadmap
+              <GlassButton 
+                variant="secondary" 
+                size="sm"
+                onClick={() => setIsRoadmapModalOpen(true)}
+                className="hover:shadow-[0_0_20px_hsl(var(--accent)/0.6)] transition-all duration-300"
+              >
+                🗺️ Roadmap
               </GlassButton>
             </div>
           </div>
@@ -421,6 +442,18 @@ const SnoreLanding: React.FC = () => {
       <AboutModal 
         isOpen={isAboutModalOpen} 
         onClose={() => setIsAboutModalOpen(false)} 
+      />
+      <WhitepaperModal 
+        isOpen={isWhitepaperModalOpen} 
+        onClose={() => setIsWhitepaperModalOpen(false)} 
+      />
+      <TokenomicsModal 
+        isOpen={isTokenomicsModalOpen} 
+        onClose={() => setIsTokenomicsModalOpen(false)} 
+      />
+      <RoadmapModal 
+        isOpen={isRoadmapModalOpen} 
+        onClose={() => setIsRoadmapModalOpen(false)} 
       />
     </div>
   );

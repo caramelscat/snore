@@ -61,6 +61,7 @@ export default {
 				},
 				'neon-blue': 'hsl(var(--neon-blue))',
 				'neon-purple': 'hsl(var(--neon-purple))',
+				'neon-green': 'hsl(var(--neon-green))',
 				'cosmic-purple': 'hsl(var(--cosmic-purple))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
