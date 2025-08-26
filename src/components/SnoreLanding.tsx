@@ -63,16 +63,35 @@ const SnoreLanding: React.FC = () => {
             className="w-full h-full object-cover breathe"
           />
           
-          {/* Twinkling stars overlay */}
+          {/* Enhanced twinkling stars overlay */}
           <div className="absolute inset-0">
-            {[...Array(50)].map((_, i) => (
+            {[...Array(80)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-white rounded-full twinkle"
+                className="absolute rounded-full twinkle-enhanced"
                 style={{
+                  width: `${Math.random() * 3 + 1}px`,
+                  height: `${Math.random() * 3 + 1}px`,
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 4}s`
+                  backgroundColor: i % 4 === 0 ? 'rgba(147,51,234,0.8)' : i % 4 === 1 ? 'rgba(59,130,246,0.8)' : i % 4 === 2 ? 'rgba(236,72,153,0.8)' : 'rgba(255,255,255,0.9)',
+                  animationDelay: `${Math.random() * 6}s`,
+                  animationDuration: `${2 + Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Shooting stars */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute shooting-star"
+                style={{
+                  animationDelay: `${i * 3}s`,
+                  top: `${Math.random() * 50}%`,
+                  left: `-10px`
                 }}
               />
             ))}
@@ -124,10 +143,16 @@ const SnoreLanding: React.FC = () => {
                 />
               ))}
             </div>
-            <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-2xl mx-auto leading-relaxed relative z-10">
-              The sleepy sloth that dreams of wealth while you sleep. 
+            <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-2xl mx-auto leading-relaxed relative z-10 text-glow-soft">
+              A living lore where the sloth travels the 'akashic field,' snoring Zzz's that become stars, and sometimes, opportunities. 
               <br />
-              <span className="text-primary font-medium">Snore your way to prosperity.</span>
+              <span className="text-neon-blue font-medium">Close your eyes, open your mind.</span>
+              <br />
+              <span className="text-neon-purple font-medium">Collect the story, not just the token.</span>
+              <br />
+              <span className="text-neon-pink font-medium">Share art, remix the sloth, invite a friend to rest.</span>
+              <br />
+              <span className="text-primary font-semibold text-glow">The calmer we get, the louder the signal becomes.</span>
             </p>
             
             <div className="flex flex-wrap gap-6 justify-center relative z-10">
