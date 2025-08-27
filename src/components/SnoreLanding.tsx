@@ -98,8 +98,8 @@ const SnoreLanding: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col justify-end min-h-screen pb-32">
-          {/* Title Card */}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col justify-center min-h-screen">
+          {/* Title Card Only */}
           <div className="glass-card mb-6 md:mb-8 relative overflow-hidden">
             {/* Floating stars inside card */}
             <div className="absolute inset-0 pointer-events-none">
@@ -121,62 +121,6 @@ const SnoreLanding: React.FC = () => {
                 $SNORE
               </span>
             </h1>
-          </div>
-
-          {/* Main Content Layout - Positioned under the sloth on cash */}
-          <div className="relative">
-            {/* Description Card - Positioned under sleeping sloth */}
-            <div className="glass-card relative overflow-hidden mb-6 md:mb-8 mx-auto max-w-4xl">
-              {/* Floating stars inside card */}
-              <div className="absolute inset-0 pointer-events-none">
-                {[...Array(15)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-1.5 h-1.5 bg-accent/60 rounded-full animate-bounce"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 4}s`,
-                      animationDuration: `${3 + Math.random() * 3}s`
-                    }}
-                  />
-                ))}
-              </div>
-              <div className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed relative z-10 space-y-4">
-                <p className="cosmic-text">
-                  A living lore where the sloth travels the 'akashic field,' snoring Zzz's that become stars, and sometimes, opportunities.
-                </p>
-                <p className="cosmic-text">
-                  Close your eyes, open your mind. Collect the story, not just the token.
-                </p>
-                <p className="cosmic-text">
-                  Share art, remix the sloth, invite a friend to rest.
-                </p>
-                <p className="cosmic-text font-semibold text-primary text-glow">
-                  The calmer we get, the louder the signal becomes.
-                </p>
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center relative z-10 max-w-2xl mx-auto">
-              <GlassButton 
-                variant="hero" 
-                size="lg"
-                onClick={() => setIsAboutModalOpen(true)}
-                className="w-full sm:w-auto"
-              >
-                About Our Dream
-              </GlassButton>
-              <GlassButton 
-                variant="secondary" 
-                size="lg"
-                onClick={() => setIsMissionModalOpen(true)}
-                className="w-full sm:w-auto"
-              >
-                Our Mission
-              </GlassButton>
-            </div>
           </div>
 
           {/* Floating ZZZ particles */}
@@ -213,6 +157,62 @@ const SnoreLanding: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          {/* Main Content - Positioned at start of money machine section */}
+          <div className="relative mb-8">
+            {/* Description Card */}
+            <div className="glass-card relative overflow-hidden mb-6 md:mb-8 mx-auto max-w-4xl">
+              {/* Floating stars inside card */}
+              <div className="absolute inset-0 pointer-events-none">
+                {[...Array(15)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-1.5 h-1.5 bg-accent/60 rounded-full animate-bounce"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 4}s`,
+                      animationDuration: `${3 + Math.random() * 3}s`
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed relative z-10 space-y-4 mb-8">
+                <p className="cosmic-text">
+                  A living lore where the sloth travels the 'akashic field,' snoring Zzz's that become stars, and sometimes, opportunities.
+                </p>
+                <p className="cosmic-text">
+                  Close your eyes, open your mind. Collect the story, not just the token.
+                </p>
+                <p className="cosmic-text">
+                  Share art, remix the sloth, invite a friend to rest.
+                </p>
+                <p className="cosmic-text font-semibold text-primary text-glow">
+                  The calmer we get, the louder the signal becomes.
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center relative z-10 max-w-2xl mx-auto">
+                <GlassButton 
+                  variant="hero" 
+                  size="lg"
+                  onClick={() => setIsAboutModalOpen(true)}
+                  className="w-full sm:w-auto"
+                >
+                  About Our Dream
+                </GlassButton>
+                <GlassButton 
+                  variant="secondary" 
+                  size="lg"
+                  onClick={() => setIsMissionModalOpen(true)}
+                  className="w-full sm:w-auto"
+                >
+                  Our Mission
+                </GlassButton>
+              </div>
+            </div>
+          </div>
+
           {/* Your Role Section */}
           <div className="glass-card mb-8 relative overflow-hidden">
             {/* Floating stars inside card */}
