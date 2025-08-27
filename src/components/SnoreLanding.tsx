@@ -98,7 +98,7 @@ const SnoreLanding: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col justify-end min-h-screen pb-32">
           {/* Title Card */}
           <div className="glass-card mb-6 md:mb-8 relative overflow-hidden">
             {/* Floating stars inside card */}
@@ -123,9 +123,9 @@ const SnoreLanding: React.FC = () => {
             </h1>
           </div>
 
-          {/* Main Content Layout - Responsive positioning around sloth face */}
+          {/* Main Content Layout - Positioned under the sloth on cash */}
           <div className="relative">
-            {/* Description Card - Positioned to work around sloth face */}
+            {/* Description Card - Positioned under sleeping sloth */}
             <div className="glass-card relative overflow-hidden mb-6 md:mb-8 mx-auto max-w-4xl">
               {/* Floating stars inside card */}
               <div className="absolute inset-0 pointer-events-none">
