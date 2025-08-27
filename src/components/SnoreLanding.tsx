@@ -60,7 +60,7 @@ const SnoreLanding: React.FC = () => {
           <img 
             src={slothSpaceImage}
             alt="Sleeping sloth in space with money and rocket"
-            className="w-full h-full object-cover breathe"
+            className="w-full h-full object-cover object-center breathe mobile-bg-fix"
           />
           
           {/* Enhanced twinkling stars overlay */}
@@ -98,9 +98,9 @@ const SnoreLanding: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           {/* Title Card */}
-          <div className="glass-card mb-8 relative overflow-hidden">
+          <div className="glass-card mb-6 md:mb-8 relative overflow-hidden">
             {/* Floating stars inside card */}
             <div className="absolute inset-0 pointer-events-none">
               {[...Array(12)].map((_, i) => (
@@ -116,50 +116,55 @@ const SnoreLanding: React.FC = () => {
                 />
               ))}
             </div>
-            <h1 className="text-6xl md:text-8xl font-black mb-2 text-glow relative z-10">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-2 text-glow relative z-10">
               <span className="bg-gradient-to-r from-primary via-accent to-neon-purple bg-clip-text text-transparent">
                 $SNORE
               </span>
             </h1>
           </div>
 
-          {/* Space for sloth face to show through */}
-          <div className="h-24 md:h-32"></div>
-
-          {/* Description and Buttons Card */}
-          <div className="glass-card relative overflow-hidden">
-            {/* Floating stars inside card */}
-            <div className="absolute inset-0 pointer-events-none">
-              {[...Array(15)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-1.5 h-1.5 bg-accent/60 rounded-full animate-bounce"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 4}s`,
-                    animationDuration: `${3 + Math.random() * 3}s`
-                  }}
-                />
-              ))}
+          {/* Main Content Layout - Responsive positioning around sloth face */}
+          <div className="relative">
+            {/* Description Card - Positioned to work around sloth face */}
+            <div className="glass-card relative overflow-hidden mb-6 md:mb-8 mx-auto max-w-4xl">
+              {/* Floating stars inside card */}
+              <div className="absolute inset-0 pointer-events-none">
+                {[...Array(15)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-1.5 h-1.5 bg-accent/60 rounded-full animate-bounce"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 4}s`,
+                      animationDuration: `${3 + Math.random() * 3}s`
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed relative z-10 space-y-4">
+                <p className="cosmic-text">
+                  A living lore where the sloth travels the 'akashic field,' snoring Zzz's that become stars, and sometimes, opportunities.
+                </p>
+                <p className="cosmic-text">
+                  Close your eyes, open your mind. Collect the story, not just the token.
+                </p>
+                <p className="cosmic-text">
+                  Share art, remix the sloth, invite a friend to rest.
+                </p>
+                <p className="cosmic-text font-semibold text-primary text-glow">
+                  The calmer we get, the louder the signal becomes.
+                </p>
+              </div>
             </div>
-            <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-2xl mx-auto leading-relaxed relative z-10 text-glow-soft">
-              A living lore where the sloth travels the 'akashic field,' snoring Zzz's that become stars, and sometimes, opportunities. 
-              <br />
-              <span className="text-neon-blue font-medium">Close your eyes, open your mind.</span>
-              <br />
-              <span className="text-neon-purple font-medium">Collect the story, not just the token.</span>
-              <br />
-              <span className="text-neon-pink font-medium">Share art, remix the sloth, invite a friend to rest.</span>
-              <br />
-              <span className="text-primary font-semibold text-glow">The calmer we get, the louder the signal becomes.</span>
-            </p>
-            
-            <div className="flex flex-wrap gap-6 justify-center relative z-10">
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center relative z-10 max-w-2xl mx-auto">
               <GlassButton 
                 variant="hero" 
                 size="lg"
                 onClick={() => setIsAboutModalOpen(true)}
+                className="w-full sm:w-auto"
               >
                 About Our Dream
               </GlassButton>
@@ -167,6 +172,7 @@ const SnoreLanding: React.FC = () => {
                 variant="secondary" 
                 size="lg"
                 onClick={() => setIsMissionModalOpen(true)}
+                className="w-full sm:w-auto"
               >
                 Our Mission
               </GlassButton>
