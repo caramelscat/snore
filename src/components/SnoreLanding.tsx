@@ -9,7 +9,7 @@ import WhitepaperModal from './WhitepaperModal';
 import TokenomicsModal from './TokenomicsModal';
 import RoadmapModal from './RoadmapModal';
 import EmailModal from './EmailModal';
-import NewsletterForm from './NewsletterForm';
+import FloatingNewsletterWidget from './FloatingNewsletterWidget';
 import slothSpaceImage from '@/assets/sloth-space.png';
 import slothMoneyMachineImage from '@/assets/sloth-money-machine.png';
 
@@ -356,7 +356,9 @@ const SnoreLanding: React.FC = () => {
               Get updates, sleep tips, and exclusive early access to $SNORE features.
             </p>
           </div>
-          <NewsletterForm />
+          <div className="text-center text-foreground/70">
+            <p>✨ Look for the floating sloth in the corner to join our dream!</p>
+          </div>
         </div>
       </section>
 
@@ -495,6 +497,7 @@ const SnoreLanding: React.FC = () => {
       />
       
       <SlothChatbox />
+      <FloatingNewsletterWidget />
     </div>
   );
 };
