@@ -46,10 +46,10 @@ const SlothChatbox = () => {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 w-[300px] max-w-[90%] font-sans z-[9999]">
+    <div className="fixed bottom-4 right-4 w-[280px] max-w-[85vw] font-sans z-[9999]">
       {/* Header */}
       <div 
-        className="bg-[#f4c542] p-2.5 rounded-t-3xl cursor-pointer text-center font-bold text-black"
+        className="glass-card p-3 rounded-t-2xl cursor-pointer text-center font-bold text-white hover:bg-white/20 transition-all duration-300"
         onClick={() => setIsOpen(!isOpen)}
       >
         🦥 Chat with SnoreBot
@@ -57,38 +57,43 @@ const SlothChatbox = () => {
       
       {/* Body */}
       {isOpen && (
-        <div className="bg-white border border-gray-300 border-t-0 h-[350px] rounded-b-3xl flex flex-col">
+        <div className="glass-card border-t-0 h-[320px] rounded-b-2xl flex flex-col backdrop-blur-xl">
           {/* Messages */}
-          <div className="flex-1 p-2.5 overflow-y-auto text-sm">
+          <div className="flex-1 p-3 overflow-y-auto text-sm space-y-2">
+            {messages.length === 0 && (
+              <div className="text-white/70 text-center py-4">
+                💤 Ask me about our dream, mission, tokenomics, or roadmap!
+              </div>
+            )}
             {messages.map((msg, index) => (
               <div
                 key={index}
                 className={`
-                  my-1.5 p-2 rounded-lg max-w-[80%] break-words
+                  p-3 rounded-lg max-w-[85%] break-words text-sm
                   ${msg.from === 'bot' 
-                    ? 'bg-gray-100' 
-                    : 'bg-green-100 ml-auto'
+                    ? 'bg-white/10 text-white border border-white/20' 
+                    : 'bg-primary/20 text-white ml-auto border border-primary/30'
                   }
                 `}
               >
-                {msg.from === 'bot' ? '🦥 ' : ''}{msg.text}
+                {msg.from === 'bot' ? '🦥 ' : '💭 '}{msg.text}
               </div>
             ))}
           </div>
           
           {/* Input */}
-          <div className="flex border-t border-gray-300">
+          <div className="flex border-t border-white/20 bg-black/20 rounded-b-2xl">
             <input
               type="text"
               placeholder="Ask me something..."
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
-              className="flex-1 p-2 border-0 rounded-bl-3xl outline-none text-sm"
+              className="flex-1 p-3 border-0 bg-transparent text-white placeholder-white/60 rounded-bl-2xl outline-none text-sm"
             />
             <button
               onClick={handleSend}
-              className="bg-[#f4c542] border-0 px-3 py-2 rounded-br-3xl cursor-pointer text-black font-medium hover:bg-[#e6b23c] transition-colors"
+              className="bg-primary/80 hover:bg-primary border-0 px-4 py-3 rounded-br-2xl cursor-pointer text-white font-medium transition-colors duration-200"
             >
               Send
             </button>
