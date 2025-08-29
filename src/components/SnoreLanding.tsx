@@ -31,7 +31,7 @@ const SnoreLanding: React.FC = () => {
   return (
     <div className="relative min-h-screen">
       <FloatingParticles />
-      <SocialFloatingIcons />
+      <SocialFloatingIcons onContactClick={() => setIsEmailModalOpen(true)} />
       
       {/* Top Navigation Buttons */}
       <div className="fixed top-8 left-8 z-50">
@@ -463,14 +463,6 @@ const SnoreLanding: React.FC = () => {
                 className="hover:shadow-[0_0_20px_hsl(var(--accent)/0.6)] transition-all duration-300"
               >
                 🗺️ Roadmap
-              </GlassButton>
-              <GlassButton 
-                variant="secondary" 
-                size="sm"
-                onClick={() => setIsEmailModalOpen(true)}
-                className="hover:shadow-[0_0_20px_hsl(var(--primary)/0.6)] transition-all duration-300"
-              >
-                📡 Contact
               </GlassButton>
             </div>
           </div>
