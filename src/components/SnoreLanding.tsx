@@ -8,6 +8,7 @@ import AboutModal from './AboutModal';
 import WhitepaperModal from './WhitepaperModal';
 import TokenomicsModal from './TokenomicsModal';
 import RoadmapModal from './RoadmapModal';
+import EmailModal from './EmailModal';
 import NewsletterForm from './NewsletterForm';
 import slothSpaceImage from '@/assets/sloth-space.png';
 import slothMoneyMachineImage from '@/assets/sloth-money-machine.png';
@@ -18,6 +19,7 @@ const SnoreLanding: React.FC = () => {
   const [isWhitepaperModalOpen, setIsWhitepaperModalOpen] = useState(false);
   const [isTokenomicsModalOpen, setIsTokenomicsModalOpen] = useState(false);
   const [isRoadmapModalOpen, setIsRoadmapModalOpen] = useState(false);
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -437,7 +439,7 @@ const SnoreLanding: React.FC = () => {
               Remember: The best investors are often the sleepiest ones. 
               Let $SNORE work while you rest.
             </p>
-            <div className="flex justify-center gap-4 relative z-10">
+            <div className="flex flex-wrap justify-center gap-4 relative z-10">
               <GlassButton 
                 variant="secondary" 
                 size="sm"
@@ -461,6 +463,14 @@ const SnoreLanding: React.FC = () => {
                 className="hover:shadow-[0_0_20px_hsl(var(--accent)/0.6)] transition-all duration-300"
               >
                 🗺️ Roadmap
+              </GlassButton>
+              <GlassButton 
+                variant="secondary" 
+                size="sm"
+                onClick={() => setIsEmailModalOpen(true)}
+                className="hover:shadow-[0_0_20px_hsl(var(--primary)/0.6)] transition-all duration-300"
+              >
+                📡 Contact
               </GlassButton>
             </div>
           </div>
@@ -486,6 +496,10 @@ const SnoreLanding: React.FC = () => {
       <RoadmapModal 
         isOpen={isRoadmapModalOpen} 
         onClose={() => setIsRoadmapModalOpen(false)} 
+      />
+      <EmailModal 
+        isOpen={isEmailModalOpen} 
+        onClose={() => setIsEmailModalOpen(false)} 
       />
       
       <SlothChatbox />
