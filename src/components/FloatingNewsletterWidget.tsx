@@ -5,22 +5,51 @@ const FloatingNewsletterWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
-    const subject = encodeURIComponent("New newsletter signup");
-    const body = encodeURIComponent(`Please add this email to the mailing list:\n${email}`);
-    const mailto = `mailto:support@snore.live?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('/functions/v1/send-newsletter-signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
 
-    // Trigger user's email client to send the signup notification
-    window.location.href = mailto;
-
-    // Clear input and show confirmation
-    setEmail('');
-    setIsSubmitted(true);
-    setIsOpen(false);
-    setTimeout(() => setIsSubmitted(false), 3000);
+      if (response.ok) {
+        // Clear input and show confirmation
+        setEmail('');
+        setIsSubmitted(true);
+        setIsOpen(false);
+        setTimeout(() => setIsSubmitted(false), 3000);
+      } else {
+        console.error('Failed to send newsletter signup');
+        // Fallback to mailto if API fails
+        const subject = encodeURIComponent("New newsletter signup");
+        const body = encodeURIComponent(`Please add this email to the mailing list:\n${email}`);
+        const mailto = `mailto:support@snore.live?subject=${subject}&body=${body}`;
+        window.location.href = mailto;
+        
+        setEmail('');
+        setIsSubmitted(true);
+        setIsOpen(false);
+        setTimeout(() => setIsSubmitted(false), 3000);
+      }
+    } catch (error) {
+      console.error('Error sending newsletter signup:', error);
+      // Fallback to mailto if API fails
+      const subject = encodeURIComponent("New newsletter signup");
+      const body = encodeURIComponent(`Please add this email to the mailing list:\n${email}`);
+      const mailto = `mailto:support@snore.live?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+      
+      setEmail('');
+      setIsSubmitted(true);
+      setIsOpen(false);
+      setTimeout(() => setIsSubmitted(false), 3000);
+    }
   };
 
   return (
@@ -43,7 +72,8 @@ const FloatingNewsletterWidget: React.FC = () => {
             </div>
           ) : (
             <>
-              <h3 className="text-xl font-semibold text-center mb-4">🌙 Join the Dream</h3>
+              <h3 className="text-xl font-semibold text-center mb-2">🌙 Join the Dream</h3>
+              <p className="text-center text-sm text-muted-foreground mb-4">newsletter</p>
               <form onSubmit={handleSubmit} className="space-y-3">
                 <input
                   type="email"
