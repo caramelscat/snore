@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { GlassButton } from './GlassButton';
 import FloatingParticles from './FloatingParticles';
 import SocialFloatingIcons from './SocialFloatingIcons';
+import SlothChatbox from './SlothChatbox';
 import MissionModal from './MissionModal';
 import AboutModal from './AboutModal';
 import WhitepaperModal from './WhitepaperModal';
@@ -486,6 +487,8 @@ const SnoreLanding: React.FC = () => {
         isOpen={isRoadmapModalOpen} 
         onClose={() => setIsRoadmapModalOpen(false)} 
       />
+      
+      <SlothChatbox />
     </div>
   );
 };
