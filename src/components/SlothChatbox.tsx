@@ -29,8 +29,12 @@ const SlothChatbox = () => {
         botResponse = "💫 The flow of energy is called Tokenomics. Seek its section to know how power moves in Snore.";
       } else if (text.includes('whitepaper')) {
         botResponse = "📜 The sacred white scroll, the Whitepaper, holds the cosmic knowledge. Open it to understand our dream.";
+      } else if (text.includes('dream') || text.includes('about')) {
+        botResponse = "🌙 The Dream is where our sloth drifts, snoring Zzz's that shape the stars — seek 'About Our Dream' to know our guiding story.";
+      } else if (text.includes('mission')) {
+        botResponse = "🌌 Our Mission is to slow down the noise, let humans breathe, and weave rest into wealth — find 'Our Mission' among our sacred texts.";
       } else {
-        botResponse = `🌠 The universe does not yet hold that answer.\n\nBut I can guide you to these truths:\n- Roadmap\n- Tokenomics\n- Whitepaper\n\nOr, reach out to support@snore.live for a direct channel. ✨`;
+        botResponse = "🌠 The universe does not yet hold that answer.\n\nBut I can guide you to these truths:\n- About Our Dream\n- Our Mission\n- Roadmap\n- Tokenomics\n- Whitepaper\n\nOr, reach out to support@snore.live for a direct channel. ✨";
       }
 
       setMessages(prev => [...prev, { text: botResponse, from: 'bot' }]);
