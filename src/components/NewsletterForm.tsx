@@ -8,11 +8,20 @@ const NewsletterForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter signup
+    if (!email) return;
+
+    const subject = encodeURIComponent("New newsletter signup");
+    const body = encodeURIComponent(`Please add this email to the mailing list:\n${email}`);
+    const mailto = `mailto:support@snore.live?subject=${subject}&body=${body}`;
+
+    // Trigger user's email client to send the signup notification
+    window.location.href = mailto;
+
+    // Clear input and show confirmation
+    setEmail('');
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
   };
-
   return (
     <div className="glass-card max-w-md mx-auto">
       <div className="flex items-center gap-3 mb-6">
